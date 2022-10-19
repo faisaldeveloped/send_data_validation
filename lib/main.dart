@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Login")),
+        title: const Center(child: Text("تسجيل الدخول")),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -55,12 +55,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _name,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: "Enter Name",
+                      labelText: "أدخل أسمك",
                     ),
                     validator: MultiValidator([
-                      RequiredValidator(errorText: "Requird"),
+                      RequiredValidator(errorText: "هذا الحقل مطلوب"),
                       MinLengthValidator(3,
-                          errorText: "Should Be At least 3 characters"),
+                          errorText: "يجب أن يكون أكثر من ثلاث أحرف"),
                     ]),
                   ),
                   const SizedBox(
@@ -70,11 +70,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _email,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: "Enter Email",
+                      labelText: "أدخل بريدك الإلكتروني",
                     ),
                     validator: MultiValidator([
-                      RequiredValidator(errorText: "Requird"),
-                      EmailValidator(errorText: "Not A Valid Email"),
+                      RequiredValidator(errorText: "هذا الحقل مطلوب"),
+                      EmailValidator(errorText: "البريد الإلكتروني غير صحيح"),
                     ]),
                   ),
                   const SizedBox(
@@ -84,12 +84,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _phone,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: "Enter Phone",
+                      labelText: "أدخل رقم جوالك",
                     ),
                     validator: MultiValidator([
-                      RequiredValidator(errorText: "Requird"),
+                      RequiredValidator(errorText: "هذا الحقل مطلوب"),
                       MinLengthValidator(10,
-                          errorText: "Should Be At least 10 Numbers"),
+                          errorText: "يجب أن يتكون رقم الجوال من 10 أرقام"),
+                      MaxLengthValidator(10,
+                          errorText:
+                              "يجب أن لا يكون رقم الجوال أكثر من 10 أرقام"),
                     ]),
                   ),
                 ],
@@ -112,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 );
               }
             },
-            child: const Text("Go To Home"),
+            child: const Text("تسجيل الدخول"),
           ),
         ],
       ),
