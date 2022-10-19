@@ -11,23 +11,26 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Home")),
+        title: const Center(child: Text("الرئيسية")),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              "Name: $name",
+              "أسمك: $name",
+              textDirection: TextDirection.rtl,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Email: $email",
+              "بريدك الإلكتروني: $email",
+              textDirection: TextDirection.rtl,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Phone: $phone",
+              "رقم جوالك: $phone",
+              textDirection: TextDirection.rtl,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
